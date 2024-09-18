@@ -1,0 +1,10 @@
+schema-version: 1.0
+
+type: system
+
+system:
+  builder: ./xbee-os-dev-builder
+
+var:
+  xbee:
+    user: root

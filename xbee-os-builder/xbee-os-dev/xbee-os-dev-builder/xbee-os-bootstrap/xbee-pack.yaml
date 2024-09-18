@@ -1,0 +1,27 @@
+schema-version: 1.0
+
+extend: ./ubuntu-nodev
+
+const:
+  lfs: /mnt/lfs
+
+var:
+  xbee:
+    user: lfs
+    group: lfs
+
+provision:
+  - pkg: build-essential clang automake bison gawk texinfo
+  - env: LFS={{ .lfs }}
+  - env: LC_ALL=POSIX
+  - env: LFS_TGT=x86_64-lfs-linux-gnu
+  - copy:
+      template: lfs.sh
+      todir: /etc/profile.d
+  - shell:
+      cmds:
+        - rm -f /usr/bin/sh
+        - ln -s /usr/bin/bash /usr/bin/sh
+  - shell:
+      resource: version-check.sh
+

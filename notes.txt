@@ -1,0 +1,5 @@
+/home/eric/.xbee/cache-exports/ubuntu-8d9d580ede/lfs-host-builder-8e8aff56fb.tar
+docker build -t mon_image_linux .
+
+docker run -ti  --privileged -v "$PWD:/app" mon_image_linux
+

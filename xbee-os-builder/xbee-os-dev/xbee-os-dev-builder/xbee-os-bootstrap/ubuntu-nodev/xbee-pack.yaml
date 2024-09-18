@@ -1,0 +1,66 @@
+schema-version: 1.0
+
+type: system
+
+system:
+    user: ubuntu
+    container: "ubuntu:24.04"
+
+var:
+    timezone:
+        region: Europe
+        city: Paris
+
+provider:
+    virtualbox:
+        disk: https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.vmdk
+    aws:
+        amis:
+            linux_amd64:
+                ap-northeast-3: ami-05244b3e16965d50d
+                us-east-2: ami-0be45d7eabf011e3d
+                me-south-1: ami-05692903cfdc0c036
+                us-west-1: ami-09d752e13fa8036d3
+                ap-southeast-1: ami-08c5f4ee271db0933
+                eu-west-2: ami-0474244c88b835731
+                eu-west-1: ami-01e93c66feed74d08
+                af-south-1: ami-0bd65c8b51219ad27
+                ap-southeast-2: ami-08bab0dd72ff600c6
+                ap-northeast-2: ami-07d1d85660ec58cd3
+                eu-south-1: ami-0a9ef30c8549029c3
+                ca-central-1: ami-0a4c50a3e266777d3
+                us-west-2: ami-0a87d8e805902d07d
+                us-east-1: ami-06f59e43b31a49ecc
+                sa-east-1: ami-0cee76f3222e2193b
+                ap-east-1: ami-040fc2f8d8c644795
+                ap-south-1: ami-02d611e1ca359707d
+                ap-northeast-1: ami-0e23c1bed4a65b930
+                eu-west-3: ami-09a477b0776212c5c
+                eu-central-1: ami-0fc2927a21c4cd7e2
+                eu-north-1: ami-0b15dce563b217be3
+            linux_arm64:
+                us-east-2: ami-05f4eba0c8acf607b
+                ap-northeast-3: ami-088449e7909180f6e
+                ap-east-1: ami-0c963a8dd40ddec4c
+                ap-northeast-1: ami-0d388e54f4e1e1a05
+                ap-southeast-1: ami-0009e306ebb05e743
+                eu-west-1: ami-07f9b6686a6d187db
+                eu-west-2: ami-0ab2b4633c17f7060
+                me-south-1: ami-01d9a950e092ccfba
+                ca-central-1: ami-0dc7af089987eaa86
+                af-south-1: ami-04eb1ec8c0f25d94b
+                sa-east-1: ami-0864021d7d6e6eebb
+                ap-northeast-2: ami-05fc0024edeb86888
+                eu-west-3: ami-00bcf43a70849358c
+                eu-central-1: ami-096d5d151d2d2c3d4
+                ap-southeast-2: ami-02a9b44bb576c447d
+                ap-south-1: ami-07adc65a60fc716d0
+                eu-south-1: ami-070d6c0c3b1495f2f
+                us-east-1: ami-01296213d823247f2
+                us-west-1: ami-0c0d58c0a4fc8de90
+                us-west-2: ami-0ad27234b2a04a5ff
+                eu-north-1: ami-01bf6f468080dbb3b
+    gcp:
+        image:
+            project: ubuntu-os-cloud
+            family: ubuntu-2404-lts
